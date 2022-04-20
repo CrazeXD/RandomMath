@@ -22,8 +22,8 @@ class getratio(object):
         self.changes = []
         for a in range(self.rows):
             if a>=1:
-                self.ychangecurrentrow = table[a][1]/table[a-1][1]
-                self.xchangecurrentrow = table[a][0]-table[a-1][0]
+                self.ychangecurrentrow = self.table[a][1]/self.table[a-1][1]
+                self.xchangecurrentrow = self.table[a][0]-self.table[a-1][0]
                 self.currentrowratio = self.ychangecurrentrow/self.xchangecurrentrow
                 self.changes.append(self.currentrowratio)
     def checkratio(self, list):
