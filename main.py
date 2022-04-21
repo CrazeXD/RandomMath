@@ -1,8 +1,10 @@
-import calculatepi, constantratio, pascalwrap, walls, pascalstriangle
+import calculatepi, constantratio, pascalwrap, walls, pascalstriangle, pythagorean
+import sdt
 import sys
+
 print("Welcome to Random Math Functions!")
 print("Usage: Type h to print out options.")
-packages = ["Constant Ratio of Exponential Function", "Calculate Pi Using RNG", "Generate a Pascals Triangle", "Find (a+b)^n", "Schoolyard Fence Problem", "Exit"]
+packages = ["Speed-Distance-Time", "Constant Ratio of Exponential Function", "Calculate Pi Using RNG", "Generate a Pascals Triangle", "Find (a+b)^n", "Schoolyard Fence Problem", "Pythagorean Theorem", "Exit"]
 dicoptions = {}
 length = len(packages)
 for i in range(1, length+1):
@@ -47,3 +49,29 @@ while True:
             obj = walls.TouchAllWalls(length, width, start, location)
             obj.starters()
             print(obj.solve())
+        elif choice == "Pythagorean Theorem":
+            side1 = int(input("What is the length of the first side?\n"))
+            side2 = int(input("What is the length of the second side?\n"))
+            hypotenuse = input("Are you solving for the hypotenuse or a side? Press enter or y for hypotenuse, n for a side: \n")
+            if hypotenuse == "" or hypotenuse.lower == "y":
+                print(pythagorean.calculate(side1, side2))
+            elif hypotenuse.lower == "n":
+                print(pythagorean.calculate(side1, side2, False))
+            else:
+                print("Not a valid option.")
+        elif choice == "Speed-Distance-Time":
+            newchoice = input("What do you want to calculate: Speed, Distance, or Time?\n")
+            if newchoice.lower == "speed":
+                distance = int(input("Enter the distance:\n"))
+                time = int(input("Enter the time:\n"))
+                print(sdt.speed(distance, time))
+            elif newchoice.lower == "time":
+                distance = int(input("Enter the distance:\n"))
+                speed = int(input("Enter the speed:\n"))
+                print(sdt.time(speed, distance))
+            elif newchoice.lower == "distance":
+                speed = int(input("Enter the speed:\n"))
+                time = int(input("Enter the time:\n"))
+                print(sdt.distance(speed, time))
+            else:
+                print("Syntax error: The input must be either 'speed' 'distance' or 'time.' ")
