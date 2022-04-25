@@ -1,12 +1,11 @@
 def fib(n):
-    prev = 1
-    current = prev
-    output = ""
-    for i in range(n):
-        output+=str(current)
-        output+=""
-        prev = current
-        current = current+prev
-    return(output)
-
-print(fib(10))
+    prev = 0
+    otherprev = 0
+    current = 1
+    overall = [1]
+    for i in range(n-1):
+        overall.append(current+prev)
+        otherprev = current
+        current+=prev
+        prev = otherprev
+    return overall
