@@ -8,11 +8,14 @@ import pythagorean
 import sdt
 import walls
 import DPythagorean
+import fibseq
+import flip.py
 
 print("Welcome to Random Math Functions!")
 print("Usage: Type h to print out options.")
-packages = ["Speed-Distance-Time", "Constant Ratio of Exponential Function", "Calculate Pi Using RNG",
-            "Generate a Pascals Triangle", "Find (a+b)^n", "Schoolyard Fence Problem", "Pythagorean Theorem", "Shortest Path 3D Coordinates", "Exit"]
+packages = ["Speed-Distance-Time", "Fibbonaci Sequence", "Constant Ratio of Exponential Function", "Calculate Pi Using RNG",
+            "Generate a Pascals Triangle", "Find (a+b)^n", "Schoolyard Fence Problem", "Pythagorean Theorem", "Shortest Path 3D Coordinates", "Coin Flip"
+            "Exit"]
 dicoptions = {}
 length = len(packages)
 for i in range(1, length + 1):
@@ -92,3 +95,8 @@ while True:
             z1 = int(input("What is the first z coordinate?"))
             z2 = int(input("What is the second z coordinate?"))
             print(DPythagorean.hypotenuse(x1, y1, z1, x2, y2, z2))
+        elif choice == "Fibbonaci Sequence":
+            print(fibseq.fib(int(input("How many numbers should the program generate?\n"))))
+        elif choice == "Coin Flip":
+            amt = int(input("How many times would you like to flip?"))
+            print(flip(amt))
