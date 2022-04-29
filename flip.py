@@ -6,7 +6,7 @@ def flip(n):
     for i in range(n):
         val = random.randint(0, 1)
         if val == 0:
-            x++
+            x+=1
         else:
-            y+=
+            y+=1
     return [x, y]

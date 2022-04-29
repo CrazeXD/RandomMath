@@ -22,4 +22,3 @@ def wrap():
         change+=1
     expression += f'a^0*b^{exponent}'
     print(expression)
-    time.sleep(10000)
