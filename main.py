@@ -13,10 +13,11 @@ import fibseq
 import flip
 import refraction
 import vitheorem
+import facfind
 
 print("Welcome to Random Math Functions!")
 print("Usage: Type h to print out options.")
-packages = ["Speed-Distance-Time", "Fibbonaci Sequence", "Constant Ratio of Exponential Function", "Calculate Pi Using RNG",
+packages = ["Speed-Distance-Time", "Fibbonaci Sequence", "List the factors of a number", "Constant Ratio of Exponential Function", "Calculate Pi Using RNG",
             "Generate a Pascals Triangle", "Find (a+b)^n", "Find the roots of a quadratic equation", "Schoolyard Fence Problem", "Pythagorean Theorem", "Shortest Path 3D Coordinates", "Coin Flip",
             "Refraction", "Exit"]
 dicoptions = {}
@@ -116,4 +117,7 @@ while True:
             b = int(input("What is the value of b in the quadratic equation?\n"))
             c = int(input("What is the value of c in the quadratic equation?\n"))
             print(vitheorem.vitheorem(a, b, c))
+        elif choice == "List the factors of a number":
+            n = int(input("What number do you want to factor?\n"))
+            print(facfind.facfind(n))
         
