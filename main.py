@@ -12,11 +12,12 @@ import DPythagorean
 import fibseq
 import flip
 import refraction
+import vitheorem
 
 print("Welcome to Random Math Functions!")
 print("Usage: Type h to print out options.")
 packages = ["Speed-Distance-Time", "Fibbonaci Sequence", "Constant Ratio of Exponential Function", "Calculate Pi Using RNG",
-            "Generate a Pascals Triangle", "Find (a+b)^n", "Schoolyard Fence Problem", "Pythagorean Theorem", "Shortest Path 3D Coordinates", "Coin Flip",
+            "Generate a Pascals Triangle", "Find (a+b)^n", "Find the roots of a quadratic equation", "Schoolyard Fence Problem", "Pythagorean Theorem", "Shortest Path 3D Coordinates", "Coin Flip",
             "Refraction", "Exit"]
 dicoptions = {}
 length = len(packages)
@@ -110,4 +111,9 @@ while True:
                 print(refraction.index(int(input("What is the refractive index of the medium the beam is coming from?\n")), int(input("At what angle is the beam coming from?\n")), int(input("At what angle is the beam exiting?\n"))))
             elif pchoice == 2:
                 print(refraction.angle(int(input("What is the refractive index of the medium the beam is coming from?\n")), int(input("What is the refractive index of the medium the beam is exiting from?\n")), int(input("At what angle is the beam coming from?\n"))))
-
+        elif choice == "Find the roots of a quadratic equation":
+            a = int(input("What is the value of a in the quadratic equation?\n"))
+            b = int(input("What is the value of b in the quadratic equation?\n"))
+            c = int(input("What is the value of c in the quadratic equation?\n"))
+            print(vitheorem.vitheorem(a, b, c))
+        
