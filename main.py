@@ -6,7 +6,6 @@ import constantratio
 import pascalstriangle
 import pascalwrap
 import pythagorean
-import sdt
 import walls
 import DPythagorean
 import fibseq
@@ -17,7 +16,7 @@ import facfind
 
 print("Welcome to Random Math Functions!")
 print("Usage: Type h to print out options.")
-packages = ["Speed-Distance-Time", "Fibbonaci Sequence", "List the factors of a number", "Constant Ratio of Exponential Function", "Calculate Pi Using RNG",
+packages = ["Fibbonaci Sequence", "List the factors of a number", "Constant Ratio of Exponential Function", "Calculate Pi Using RNG",
             "Generate a Pascals Triangle", "Find (a+b)^n", "Find the roots of a quadratic equation", "Schoolyard Fence Problem", "Pythagorean Theorem", "Shortest Path 3D Coordinates", "Coin Flip",
             "Refraction", "Exit"]
 dicoptions = {}
@@ -77,22 +76,6 @@ while True:
                 print(pythagorean.calculate(side1, side2, False))
             else:
                 print("Not a valid option.")
-        elif choice == "Speed-Distance-Time":
-            newchoice = input("What do you want to calculate: Speed, Distance, or Time?\n")
-            if newchoice.lower == "speed":
-                distance = int(input("Enter the distance:\n"))
-                time = int(input("Enter the time:\n"))
-                print(sdt.speed(distance, time))
-            elif newchoice.lower == "time":
-                distance = int(input("Enter the distance:\n"))
-                speed = int(input("Enter the speed:\n"))
-                print(sdt.time(speed, distance))
-            elif newchoice.lower == "distance":
-                speed = int(input("Enter the speed:\n"))
-                time = int(input("Enter the time:\n"))
-                print(sdt.distance(speed, time))
-            else:
-                print("Syntax error: The input must be either 'speed' 'distance' or 'time.' ")
         elif choice == "Shortest Path 3D Coordinates":
             x1 = int(input("What is the first x coordinate?"))
             x2 = int(input("What is the second x coordinate?"))
