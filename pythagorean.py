@@ -1,4 +1,4 @@
-def calculate(side1, side2, hypotenuse=True):
+def calculate(side1, side2, hypotenuse):
     if hypotenuse:
         side1 = side1**2
         side2 = side2**2

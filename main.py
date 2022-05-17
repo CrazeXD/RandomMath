@@ -69,14 +69,11 @@ while True:
         elif choice == "Pythagorean Theorem":
             side1 = int(input("What is the length of the first side?\n"))
             side2 = int(input("What is the length of the second side?\n"))
-            hypotenuse = input(
-                "Are you solving for the hypotenuse or a side? Press enter or y for hypotenuse, n for a side: \n")
-            if hypotenuse == "" or hypotenuse.lower == "y":
-                print(pythagorean.calculate(side1, side2))
-            elif hypotenuse.lower == "n":
+            hypotenuse = input("Are you solving for the hypotenuse or a side? Press enter or y for hypotenuse, n for a side: \n")
+            if hypotenuse == '' or hypotenuse == "y" or hypotenuse == "Y":
+                print(pythagorean.calculate(side1, side2, True))
+            elif hypotenuse == "n" or hypotenuse == "N":
                 print(pythagorean.calculate(side1, side2, False))
-            else:
-                print("Not a valid option.")
         elif choice == "Shortest Path 3D Coordinates":
             x1 = int(input("What is the first x coordinate?"))
             x2 = int(input("What is the second x coordinate?"))
