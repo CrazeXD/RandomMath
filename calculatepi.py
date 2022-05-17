@@ -1,6 +1,7 @@
 import random
 
 def calcpi(n):
+    count = 0
     circle = 0
     square = 0
     for i in range(n):
