@@ -17,10 +17,11 @@ import vitheorem
 import facfind
 import mid
 import doppler
+import slope
 
 print("Welcome to Random Math Functions!")
 print("Usage: Type h to print out options.")
-packages = ["Fibbonaci Sequence", "List the factors of a number", "Constant Ratio of Exponential Function", "Calculate Pi Using RNG",
+packages = ["Fibbonaci Sequence", "List the factors of a number", "Slope of a line", "Constant Ratio of Exponential Function", "Calculate Pi Using RNG",
             "Generate a Pascals Triangle", "Find (a+b)^n", "Find the roots of a quadratic equation", "Schoolyard Fence Problem", "Pythagorean Theorem", "Shortest Path 3D Coordinates", "Coin Flip",
             "Midpoint", "Refraction", "Doppler Effect", "Exit"]
 dicoptions = {}
@@ -122,5 +123,7 @@ try:
                 else:
                     observer = False
                 print(doppler.doppler(speed, sos, frequency, direction, observer))
+            elif choice == "Slope of a line":
+                print(slope.slope(int(input("What is the first x coordinate:\n")), int(input("What is the first y coordinate:\n")), int(input("What is the second x coordinate:\n")), int(input("What is the second y coordinate:\n"))))
 except ValueError:
     next
