@@ -13,12 +13,13 @@ import flip
 import refraction
 import vitheorem
 import facfind
+import mid
 
 print("Welcome to Random Math Functions!")
 print("Usage: Type h to print out options.")
 packages = ["Fibbonaci Sequence", "List the factors of a number", "Constant Ratio of Exponential Function", "Calculate Pi Using RNG",
             "Generate a Pascals Triangle", "Find (a+b)^n", "Find the roots of a quadratic equation", "Schoolyard Fence Problem", "Pythagorean Theorem", "Shortest Path 3D Coordinates", "Coin Flip",
-            "Refraction", "Exit"]
+            "Midpoint", "Refraction", "Exit"]
 dicoptions = {}
 length = len(packages)
 for i in range(1, length + 1):
@@ -103,4 +104,6 @@ while True:
         elif choice == "List the factors of a number":
             n = int(input("What number do you want to factor?\n"))
             print(facfind.facfind(n))
-        
+        elif choice == "Midpoint":
+            print(mid.midpoint(int(input("What is the first x coordinate:\n")), int(input("What is the first y coordinate:\n")), int(input("What is the second x coordinate:\n")), int(input("What is the second y coordinate:\n"))))
+    
