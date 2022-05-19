@@ -7,6 +7,7 @@ import constantratio
 import doppler
 import pascalstriangle
 import pascalwrap
+from primefac import primefac
 import pythagorean
 import walls
 import DPythagorean
@@ -21,7 +22,7 @@ import slope
 
 print("Welcome to Random Math Functions!")
 print("Usage: Type h to print out options.")
-packages = ["Fibbonaci Sequence", "List the factors of a number", "Slope of a line", "Constant Ratio of Exponential Function", "Calculate Pi Using RNG",
+packages = ["Fibbonaci Sequence", "List the factors of a number", "List the prime factor of a number", "Slope of a line", "Constant Ratio of Exponential Function", "Calculate Pi Using RNG",
             "Generate a Pascals Triangle", "Find (a+b)^n", "Find the roots of a quadratic equation", "Schoolyard Fence Problem", "Pythagorean Theorem", "Shortest Path 3D Coordinates", "Coin Flip",
             "Midpoint", "Refraction", "Doppler Effect", "Exit"]
 dicoptions = {}
@@ -90,8 +91,8 @@ try:
             elif choice == "Fibbonaci Sequence":
                 print(fibseq.fib(int(input("How many numbers should the program generate?\n"))))
             elif choice == "Coin Flip":
-                amt = int(input("How many times would you like to flip?"))
-                print(flip(amt))
+                amt = int(input("How many times would you like to flip?\n"))
+                print(flip.flip(amt))
             elif choice == "Refraction":
                 pchoice = int(input("Would you like to find an index or an angle? 1 for index, 2 for angle:\n"))
                 if pchoice == 1:
@@ -125,5 +126,9 @@ try:
                 print(doppler.doppler(speed, sos, frequency, direction, observer))
             elif choice == "Slope of a line":
                 print(slope.slope(int(input("What is the first x coordinate:\n")), int(input("What is the first y coordinate:\n")), int(input("What is the second x coordinate:\n")), int(input("What is the second y coordinate:\n"))))
+            elif choice == "List the prime factor of a number":
+                print(primefac(int(input("What is the number you want to factor?\n"))))
 except ValueError:
-    next
+    print("Error in input. Now terminating process. Thank you for using Random Math Functions!")
+    time.sleep(4)
+    exit()
