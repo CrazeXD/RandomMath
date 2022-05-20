@@ -1,10 +1,11 @@
-import importlib
 import time
 import sys
 
+import intersect
 import calculatepi
 import constantratio
 import doppler
+from nthnum import nth_num
 import pascalstriangle
 import pascalwrap
 from primefac import primefac
@@ -19,12 +20,14 @@ import facfind
 import mid
 import doppler
 import slope
+import trianglerotate
+import dilate
 
 print("Welcome to Random Math Functions!")
 print("Usage: Type h to print out options.")
-packages = ["Fibbonaci Sequence", "List the factors of a number", "List the prime factor of a number", "Slope of a line", "Constant Ratio of Exponential Function", "Calculate Pi Using RNG",
-            "Generate a Pascals Triangle", "Find (a+b)^n", "Find the roots of a quadratic equation", "Schoolyard Fence Problem", "Pythagorean Theorem", "Shortest Path 3D Coordinates", "Coin Flip",
-            "Midpoint", "Refraction", "Doppler Effect", "Exit"]
+packages = ["Fibbonaci Sequence", "List the factors of a number", "List the prime factor of a number", "Find the nth number whose digits add up to a certain number", "Slope of a line", "Constant Ratio of Exponential Function", "Calculate Pi Using RNG",
+            "Find the intersection of 2 lines", "Generate a Pascals Triangle", "Find (a+b)^n", "Find the roots of a quadratic equation", "Schoolyard Fence Problem", "Pythagorean Theorem", "Shortest Path 3D Coordinates", "Coin Flip",
+            "Rotate a triangle 90 degrees", "Dilate a triangle", "Midpoint", "Refraction", "Doppler Effect", "Exit"]
 dicoptions = {}
 length = len(packages)
 for i in range(1, length + 1):
@@ -128,7 +131,21 @@ try:
                 print(slope.slope(int(input("What is the first x coordinate:\n")), int(input("What is the first y coordinate:\n")), int(input("What is the second x coordinate:\n")), int(input("What is the second y coordinate:\n"))))
             elif choice == "List the prime factor of a number":
                 print(primefac(int(input("What is the number you want to factor?\n"))))
+            elif choice == "Find the nth number whose digits add up to a certain number":
+                print(nth_num(int(input("What is n?\n")), int(input("What is the sum of the digits?\n"))))
+            elif choice == "Find the intersection of 2 lines":
+                print(intersect.intersect(int(input("What is the first line slope:\n")), int(input("What is the first y intercept:\n")), int(input("What is the second line slope:\n")), int(input("What is the second y intercept:\n"))))
+            elif choice == "Rotate a triangle 90 degrees":
+                counter = int(input("Is the rotation counterclockwise (1) or clockwise (2)?\n"))
+                if counter == 1:
+                    counter = True
+                elif counter == 2:
+                    counter = False
+                print(trianglerotate.trianglerotation(int(input("What is the first x coordinate:\n")), int(input("What is the first y coordinate:\n")), int(input("What is the second x coordinate:\n")), int(input("What is the second y coordinate:\n")), int(input("What is the third x coordinate:\n")), int(input("What is the third y coordinate:\n")), counter))
+            elif choice == "Dilate a triangle":
+                print(dilate.dilate(int(input("What is the first x coordinate:\n")), int(input("What is the first y coordinate:\n")), int(input("What is the second x coordinate:\n")), int(input("What is the second y coordinate:\n")), int(input("What is the third x coordinate:\n")), int(input("What is the third y coordinate:\n")), int(input("What is the scale factor?\n")), int(input("What is the x coordinate of the center of dilatiion?\n")), int(input("What is the x coordinate of the center of dilatiion?\n")), int(input("What is the y coordinate of the center of dilatiion?\n")), int(input("What is the dilation factor?\n"))))
 except ValueError:
     print("Error in input. Now terminating process. Thank you for using Random Math Functions!")
     time.sleep(4)
     exit()
+    
