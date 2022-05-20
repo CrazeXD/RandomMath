@@ -22,12 +22,13 @@ import doppler
 import slope
 import trianglerotate
 import dilate
+import areaoftriangle
 
 print("Welcome to Random Math Functions!")
-print("Usage: Type h to print out options.")
+print("Usage: Type h, help, or ? to print out options.")
 packages = ["Fibbonaci Sequence", "List the factors of a number", "List the prime factor of a number", "Find the nth number whose digits add up to a certain number", "Slope of a line", "Constant Ratio of Exponential Function", "Calculate Pi Using RNG",
             "Find the intersection of 2 lines", "Generate a Pascals Triangle", "Find (a+b)^n", "Find the roots of a quadratic equation", "Schoolyard Fence Problem", "Pythagorean Theorem", "Shortest Path 3D Coordinates", "Coin Flip",
-            "Rotate a triangle 90 degrees", "Dilate a triangle", "Midpoint", "Refraction", "Doppler Effect", "Exit"]
+            "Find the area of a triangle", "Rotate a triangle 90 degrees", "Dilate a triangle", "Midpoint", "Refraction", "Doppler Effect", "Exit"]
 dicoptions = {}
 length = len(packages)
 for i in range(1, length + 1):
@@ -38,11 +39,14 @@ try:
     while True:
         options = input("> ")
         # Print out all the options
-        if options.lower == "h" or options.lower == "help":
+        if options == "h" or options == "help" or options == "?" or options == "H":
             dicoptions = {}
             for i in range(1, length + 1):
                 j = str(i)
-                print(f"{j}.", packages[i - 1])
+                if i<10:
+                    print(f"{j}. ", packages[i - 1])
+                else:
+                    print(f"{j}.", packages[i - 1])
                 dicoptions[i] = packages[i - 1]
         elif options == str(length) or options == '':
             print("Thank you for using Random Math Functions!")
@@ -141,9 +145,13 @@ try:
                     counter = True
                 elif counter == 2:
                     counter = False
+                center = int(input("What is the x coordinate of the center of rotation?\n"))
+                center2 = int(input("What is the y coordinate of the center of rotation?\n"))
                 print(trianglerotate.trianglerotation(int(input("What is the first x coordinate:\n")), int(input("What is the first y coordinate:\n")), int(input("What is the second x coordinate:\n")), int(input("What is the second y coordinate:\n")), int(input("What is the third x coordinate:\n")), int(input("What is the third y coordinate:\n")), counter))
             elif choice == "Dilate a triangle":
-                print(dilate.dilate(int(input("What is the first x coordinate:\n")), int(input("What is the first y coordinate:\n")), int(input("What is the second x coordinate:\n")), int(input("What is the second y coordinate:\n")), int(input("What is the third x coordinate:\n")), int(input("What is the third y coordinate:\n")), int(input("What is the scale factor?\n")), int(input("What is the x coordinate of the center of dilatiion?\n")), int(input("What is the x coordinate of the center of dilatiion?\n")), int(input("What is the y coordinate of the center of dilatiion?\n")), int(input("What is the dilation factor?\n"))))
+                print(dilate.dilate(int(input("What is the first x coordinate:\n")), int(input("What is the first y coordinate:\n")), int(input("What is the second x coordinate:\n")), int(input("What is the second y coordinate:\n")), int(input("What is the third x coordinate:\n")), int(input("What is the third y coordinate:\n")), int(input("What is the x coordinate of the center of dilatiion?\n")), int(input("What is the y coordinate of the center of dilatiion?\n")), int(input("What is the dilation factor?\n"))))
+            elif choice == "Find the area of a triangle":
+                print(areaoftriangle.areatriangle(int(input("What is the base:\n")), int(input("What is the height:\n"))))
 except ValueError:
     print("Error in input. Now terminating process. Thank you for using Random Math Functions!")
     time.sleep(4)
