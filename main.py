@@ -160,7 +160,7 @@ try:
                 print(fma.Force(int(input("What is the mass?\n")), int(input("What is the acceleration?\n"))))
               elif subchoice == "m":
                 print(fma.Mass(int(input("What is the force?\n")), int(input("What is the acceleration?\n"))))
-              elif subchice == "a":
+              elif subchoice == "a":
                 print(fma.Acceleration(int(input("What is the force?\n")), int(input("What is the mass?\n"))))
               else:
                 raise ValueError
