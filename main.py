@@ -23,12 +23,13 @@ import slope
 import trianglerotate
 import dilate
 import areaoftriangle
+import fma
 
 print("Welcome to Random Math Functions!")
 print("Usage: Type h, help, or ? to print out options.")
 packages = ["Fibbonaci Sequence", "List the factors of a number", "List the prime factor of a number", "Find the nth number whose digits add up to a certain number", "Slope of a line", "Constant Ratio of Exponential Function", "Calculate Pi Using RNG",
             "Find the intersection of 2 lines", "Generate a Pascals Triangle", "Find (a+b)^n", "Find the roots of a quadratic equation", "Schoolyard Fence Problem", "Pythagorean Theorem", "Shortest Path 3D Coordinates", "Coin Flip",
-            "Find the area of a triangle", "Rotate a triangle 90 degrees", "Dilate a triangle", "Midpoint", "Refraction", "Doppler Effect", "Exit"]
+            "Find the area of a triangle", "Rotate a triangle 90 degrees", "Dilate a triangle", "Midpoint", "Refraction", "Doppler Effect", "F=ma", "Exit"]
 dicoptions = {}
 length = len(packages)
 for i in range(1, length + 1):
@@ -88,12 +89,12 @@ try:
                 elif hypotenuse == "n" or hypotenuse == "N":
                     print(pythagorean.calculate(side1, side2, False))
             elif choice == "Shortest Path 3D Coordinates":
-                x1 = int(input("What is the first x coordinate?"))
-                x2 = int(input("What is the second x coordinate?"))
-                y1 = int(input("What is the first y coordinate?"))
-                y2 = int(input("What is the second y coordinate?"))
-                z1 = int(input("What is the first z coordinate?"))
-                z2 = int(input("What is the second z coordinate?"))
+                x1 = int(input("What is the first x coordinate?\n"))
+                y1 = int(input("What is the first y coordinate?\n"))
+                z1 = int(input("What is the first z coordinate?\n"))
+                x2 = int(input("What is the second x coordinate?\n"))
+                y2 = int(input("What is the second y coordinate?\n"))
+                z2 = int(input("What is the second z coordinate?\n"))
                 print(DPythagorean.hypotenuse(x1, y1, z1, x2, y2, z2))
             elif choice == "Fibbonaci Sequence":
                 print(fibseq.fib(int(input("How many numbers should the program generate?\n"))))
@@ -152,6 +153,18 @@ try:
                 print(dilate.dilate(int(input("What is the first x coordinate:\n")), int(input("What is the first y coordinate:\n")), int(input("What is the second x coordinate:\n")), int(input("What is the second y coordinate:\n")), int(input("What is the third x coordinate:\n")), int(input("What is the third y coordinate:\n")), int(input("What is the x coordinate of the center of dilatiion?\n")), int(input("What is the y coordinate of the center of dilatiion?\n")), int(input("What is the dilation factor?\n"))))
             elif choice == "Find the area of a triangle":
                 print(areaoftriangle.areatriangle(int(input("What is the base:\n")), int(input("What is the height:\n"))))
+            elif choice == "F=ma":
+              subchoice = input("Are you finding Force(f), Mass(m) Or Acceleration(a)?\n")
+              subchoice = subchoice.lower()
+              if subchoice == "f":
+                print(fma.Force(int(input("What is the mass?\n")), int(input("What is the acceleration?\n"))))
+              elif subchoice == "m":
+                print(fma.Mass(int(input("What is the force?\n")), int(input("What is the acceleration?\n"))))
+              elif subchice == "a":
+                print(fma.Acceleration(int(input("What is the force?\n")), int(input("What is the mass?\n"))))
+              else:
+                raise ValueError
+              
 except ValueError:
     print("Error in input. Now terminating process. Thank you for using Random Math Functions!")
     time.sleep(4)

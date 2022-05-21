@@ -1,4 +1,3 @@
-'''Find the sum of the digits of a number'''
 def sum_digits(n):
     sum = 0
     while n > 0:
@@ -6,7 +5,6 @@ def sum_digits(n):
         n //= 10
     return sum
 
-'''Program to find the nth number whose digits add to a given number'''
 def nth_num(n, sum):
     num = 0
     while num < n:
